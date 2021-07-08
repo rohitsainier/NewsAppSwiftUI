@@ -7,11 +7,13 @@
 
 import Foundation
 
+fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
+
 struct Article{
     let source: Source
     let title:String
     let url:String
-    let publishedAt:String
+    let publishedAt:Date
     
     let author:String?
     let description:String?
@@ -22,6 +24,9 @@ struct Article{
     }
     var descriptionText:String{
         description ?? ""
+    }
+    var captionText:String{
+        "\(source.name) ﹒ \(relativeDateFormatter.localizedString(for: publishedAt,relativeTo:Date()))"
     }
     var articleURL:URL{
         URL(string: url)!
@@ -45,12 +50,7 @@ extension Article{
         let previewDataUrl = Bundle.main.url(forResource: "news", withExtension: "json")!
         let data = try! Data(contentsOf: previewDataUrl)
         let jsonDecoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        jsonDecoder.dateDecodingStrategy = .iso8601
         let apiResponse = try! jsonDecoder.decode(NewsApiResponse.self, from: data)
         return apiResponse.articles ?? []
     }
