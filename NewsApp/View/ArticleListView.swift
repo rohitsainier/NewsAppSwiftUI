@@ -11,7 +11,6 @@ struct ArticleListView: View {
     @State private var selectedArticle: Article?
     let articles: [Article]
     var body: some View {
-        NavigationView{
             List{
                 ForEach(articles){article in
                     ArticleRowView(article: article)
@@ -23,12 +22,11 @@ struct ArticleListView: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .navigationTitle("Articles")
             .sheet(item: $selectedArticle) {
                 SafariView(url: $0.articleURL)
                     .edgesIgnoringSafeArea(.bottom)
             }
-        }
+        
     }
 }
 
