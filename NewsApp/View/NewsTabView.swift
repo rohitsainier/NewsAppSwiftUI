@@ -20,6 +20,7 @@ struct NewsTabView: View {
                     loadTask()
                 }
                 .navigationTitle(articleNewsVM.selectedCategory.text)
+                .navigationBarItems(trailing: menu)
         }
     }
     
@@ -37,6 +38,22 @@ struct NewsTabView: View {
             await articleNewsVM.loadArticles()
         }
     }
+    
+    private var menu: some View{
+        Menu {
+            Picker("Category", selection: $articleNewsVM.selectedCategory) {
+                ForEach(Category.allCases){
+                    Text($0.text).tag($0)
+                }
+            }
+        } label: {
+            Image(systemName: "fiberchannel")
+                .imageScale(.large)
+        }
+
+    }
+    
+    
     
     @ViewBuilder
     private var overlayView: some View{
