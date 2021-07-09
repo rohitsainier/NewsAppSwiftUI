@@ -31,13 +31,14 @@ class ArticleNewsViewModel:ObservableObject{
     }
     
     func loadArticles() async{
-        phase = .empty
-        do{
-            let articles = try await newAPI.fetch(from: selectedCategory)
-            phase = .success(articles)
-        }
-        catch{
-            phase = .failure(error)
-        }
+        phase = .success(Article.previewData)
+//        phase = .empty
+//        do{
+//            let articles = try await newAPI.fetch(from: selectedCategory)
+//            phase = .success(articles)
+//        }
+//        catch{
+//            phase = .failure(error)
+//        }
     }
 }
