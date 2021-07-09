@@ -19,6 +19,9 @@ struct NewsTabView: View {
                 .onAppear{
                     loadTask()
                 }
+                .onChange(of: articleNewsVM.selectedCategory){ _ in
+                    loadTask()
+                }
                 .navigationTitle(articleNewsVM.selectedCategory.text)
                 .navigationBarItems(trailing: menu)
         }
