@@ -27,6 +27,7 @@
 		91F6364026975B8E00F71D50 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6363F26975B8E00F71D50 /* ArticleRowView.swift */; };
 		91F636432697788400F71D50 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F636422697788400F71D50 /* ArticleListView.swift */; };
 		91F6364526977B7800F71D50 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6364426977B7800F71D50 /* SafariView.swift */; };
+		91F9B3F226996081003DD17D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9B3F126996081003DD17D /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		91F6364126976E0700F71D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		91F636422697788400F71D50 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		91F6364426977B7800F71D50 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		91F9B3F126996081003DD17D /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				91388502269621720001A72A /* Article.swift */,
 				91388506269628320001A72A /* NewsApiResponse.swift */,
 				9142C88226980461005F5D7A /* Category.swift */,
+				91F9B3F126996081003DD17D /* DataStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913884DC26961F630001A72A /* ContentView.swift in Sources */,
+				91F9B3F226996081003DD17D /* DataStore.swift in Sources */,
 				91F636432697788400F71D50 /* ArticleListView.swift in Sources */,
 				9142C88A26985D99005F5D7A /* EmptyPlaceholderView.swift in Sources */,
 				91F6364026975B8E00F71D50 /* ArticleRowView.swift in Sources */,
